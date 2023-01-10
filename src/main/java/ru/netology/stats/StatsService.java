@@ -13,11 +13,7 @@ public class StatsService {
 
     //2. Среднюю сумму продаж в месяц.
     public int meanSales(long[] sales) {
-        int sumAllMonth = new StatsService().sumSales(sales);
-        /*int sumAllMonth = 0;
-        for (long sale : sales) {
-            sumAllMonth += sale;
-        }*/
+        int sumAllMonth = sumSales(sales);
         return sumAllMonth / 12;
     }
 
@@ -51,7 +47,7 @@ public class StatsService {
 
 //5.Количество месяцев, в которых продажи были ниже среднего (см. п.2).
     public int belowAverageSales(long [] sales) {
-        int meanSum = new StatsService().meanSales(sales);
+        int meanSum = meanSales(sales);
         int countMonth = 0;
         for (long sale:
              sales) {
@@ -62,7 +58,7 @@ public class StatsService {
 
     //6.Количество месяцев, в которых продажи были выше среднего (см. п.2).
     public int aboveAverageSales(long [] sales) {
-        int meanSum = new StatsService().meanSales(sales);
+        int meanSum = meanSales(sales);
         int countMonth = 0;
         for (long sale :
                 sales) {
